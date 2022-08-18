@@ -1,0 +1,18 @@
+{% extends "index.html"%}
+
+{% block movies %}
+{% for movie in movies %}
+<div class="col-sm-3 mb-3">
+  <img src="{{movie.img}}" class="img-thumbnail" alt="...">
+</div>
+<div class="col-lg mb-3">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{movie.title}}</h5>
+    <p>{{movie.desc}}</p>
+    <iframe src="{{movie.url}}" width="100%" height="460" scrolling="OFF" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div> 
+</div>
+{% endfor %}
+{% endblock %}

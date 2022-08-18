@@ -1,0 +1,39 @@
+{% extends "index.html"%}
+
+
+{% block search %}
+
+<form class="col-lg" action="{{url_for('search_by_title')}}" method="post">
+    <div class="form-row">
+    <div class="col-md-6 mb-3">
+        <label for="ValidationTitle">SearchFor</label>
+        <input type="text" name="title" class="form-control" placeholder="Search" required>
+
+    </div>
+
+    <button class="btn btn-primary" type="submit">Search</button>
+</form>
+
+
+{% block search_result %}
+
+{% if movie %}
+{% block movies %}
+{% for movie in movies %}
+<div class="col-sm mb-3">
+<div class="card" style="width: 18rem;">
+  <img src="{{movie.img}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{movie.title}}</h5>
+    <a href="{{url_for('single_movie',title=movie.title)}}" class="btn btn-primary">Watch and Download</a>
+  </div>
+</div> 
+</div>
+{% endfor %}
+{% endblock %}
+{% else %}
+<div></div>
+
+{% endif %}
+ {% endblock %}
+{% endblock %}
