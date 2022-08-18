@@ -1,1 +1,1 @@
-web: gunicorn work.wsgi
+web: python work.py
