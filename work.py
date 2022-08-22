@@ -1,6 +1,6 @@
-flask -p 5000
 from flask import Flask , render_template , url_for , request
 import requests
+flask run --host=0.0.0.0 --port=5000
 app = Flask(__name__)
 title1="batman"
 @app.route("/")
