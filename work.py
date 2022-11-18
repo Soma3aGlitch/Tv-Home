@@ -1,7 +1,7 @@
 from flask import Flask , render_template , url_for , request
 import requests
 app = Flask(__name__)
-title1="batman"
+title1="action"
 @app.route("/")
 def main():
    rawdata= requests.get("https://fake-api-rest-app.herokuapp.com/movies?q="+title1)
